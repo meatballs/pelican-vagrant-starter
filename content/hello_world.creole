@@ -1,0 +1,9 @@
+<<header>>
+title: Hello World
+slug: hello
+tags: pelican
+date: 2014-09-26
+<</header>>
+
+= Hello World
+This is the first post on my brand new Pelican blog!

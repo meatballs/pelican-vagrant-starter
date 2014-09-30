@@ -1,0 +1,6 @@
+.vagrant
+output
+cache
+*.pyc
+.DS_Store
+*.pid

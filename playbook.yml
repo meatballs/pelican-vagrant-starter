@@ -1,0 +1,42 @@
+- hosts: all
+  vars:
+    locale: en_GB.UTF-8
+
+  tasks:
+    - name: Generate locale
+      sudo: yes
+      command: /usr/sbin/locale-gen {{ locale }}
+
+    - name: Set locale
+      sudo: yes
+      command: /usr/sbin/update-locale LANG={{ locale }} LC_ALL={{ locale }}
+
+    - name: Update apt cache
+      sudo: yes
+      apt: update_cache=yes
+
+    - name: Install packages
+      sudo: yes
+      apt: pkg={{ item }} state=installed
+      with_items:
+        - zsh
+        - curl
+        - git
+        - python-pip
+
+    - name: Download dotfiles install script
+      shell: curl https://raw.githubusercontent.com/meatballs/dotfiles/master/install.zsh > /tmp/install.zsh
+
+    - name: Set executable property for install script
+      file: path=/tmp/install.zsh mode=774
+
+    - name: Install dotfiles
+      shell: /tmp/install.zsh
+
+    - name: Change default shell to zsh
+      sudo: yes
+      user: name=vagrant shell=/bin/zsh
+
+    - name: Install python packages
+      sudo: yes
+      pip: requirements=/vagrant/requirements.txt
