@@ -4,9 +4,9 @@ Starter project for a pelican based blog
 
 Installation
 ============
-* Install virtualbox
-* Install vagrant
-* Install ansible
+* Download and install virtualbox (https://www.virtualbox.org/wiki/Downloads)
+* Download and install vagrant (https://www.vagrantup.com/downloads.html)
+* Download and install ansible (http://docs.ansible.com/intro_installation.html#getting-ansible)
 * Fork this repository
-* Clone the fork
-* Start the vagrant vm
+* Clone the fork (with --recursive option)
+* Start the vagrant vm (vagrant up)
