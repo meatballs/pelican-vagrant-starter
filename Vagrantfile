@@ -4,8 +4,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.box = "ubuntu/trusty64"
 
-  config.vm.provision :ansible do |an|
-    an.playbook = "playbook.yml"
-  end
+  config.vm.provision :shell, path: "provision.sh"
 
 end
