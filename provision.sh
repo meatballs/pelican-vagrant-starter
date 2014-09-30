@@ -13,4 +13,5 @@ su -c "chmod 774 ~/install.sh" vagrant
 su -c "~/install.sh" vagrant
 chsh -s /bin/zsh vagrant
 
-pip install -r /vagrant/requirements.txt
+cd /vagrant
+pip install -r requirements.txt
