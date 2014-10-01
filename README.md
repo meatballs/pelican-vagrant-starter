@@ -13,5 +13,5 @@ Usage
 =====
 * Create your articles in the content folder on your host machine
 * Edit any of the pelican config files on your host machine
-* Your vm will be running a web server so you can see your site at http://localhost:800
+* Your vm will be running a web server so you can see your site at http://localhost:8000 (on your host machine)
 * Login to your vm (using 'vagrant ssh') to publish your site
