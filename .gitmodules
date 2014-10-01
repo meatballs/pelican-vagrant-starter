@@ -1,3 +1,6 @@
 [submodule "plugins"]
 	path = plugins
 	url = https://github.com/getpelican/pelican-plugins
+[submodule "voidy-bootstrap"]
+    path = themes/voidy-bootstrap
+    url = https://github.com/robulouski/voidy-bootstrap.git
