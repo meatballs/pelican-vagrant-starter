@@ -6,7 +6,7 @@ Installation
 ============
 * Download and install virtualbox (https://www.virtualbox.org/wiki/Downloads)
 * Download and install vagrant (https://www.vagrantup.com/downloads.html)
-* Clone this repository with --recursive option (or fork it and clone your fork)
+* Clone this repository (with --recursive option) or fork it and clone your fork
 * Start the vagrant vm (vagrant up)
 
 Usage
