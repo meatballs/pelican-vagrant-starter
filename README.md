@@ -1,4 +1,4 @@
-blog-starter
+pelican-vagrant-starter
 ============
 Starter project for a pelican based blog using a vagrant virtual machine.
 
