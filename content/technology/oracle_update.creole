@@ -1,7 +1,7 @@
 <<header>>
 title: Oracle Update Statements
 tags: oracle, sql
-date: 2014-09-26
+date: 2012-03-08
 <</header>>
 There are several methods in Oracle SQL to update records in one table based on the content of another table. Here, I give some of those methods and some guidance on where they might be most appropriate.
 
@@ -10,11 +10,11 @@ There are several methods in Oracle SQL to update records in one table based on 
 Oracle uses a 'correlated subquery' syntax which looks like this:
 
 {{{
-UPDATE  t
-SET  = 
+UPDATE  target t
+SET t.column = s.column
 (SELECT 
-FROM  s
-WHERE s. = t.)
+FROM  source s
+WHERE s.join_column = t.join_column)
 }}}
 
 The bracketed subquery joins the source and target tables and the target table is updated with values from the source column. I've shown a simple join between the two tables using one column from each, but the WHERE clause in the subquery can be as complex as required.
@@ -32,12 +32,12 @@ There are several ways to deal with this problem:
 The simplest method is to limit the set of target records which are to be updated:
 
 {{{
-UPDATE  t
-SET  = 
+UPDATE  target t
+SET t.column = s.column
 (SELECT 
-FROM  s
-WHERE s. = t.)
-WHERE  = 
+FROM  source s
+WHERE s.join_column = t.join_column)
+WHERE t.column......
 }}}
 
 Above, I've added a simple WHERE clause to the main query (not to be confused with the WHERE clause in the subquery which joins the two tables). This simply applies a criterion to some column on the target table and limits the update to those records which meet the criterion.
@@ -47,11 +47,11 @@ Above, I've added a simple WHERE clause to the main query (not to be confused wi
 It's not always possible to determine in advance the set of records to be updated. Often, we want to update those target records which have a matching source record and that can be a dynamic set. One simple method uses the NVL function which allows us to make a substitution when a NULL value is encountered. Here's some example code:
 
 {{{
-UPDATE  t
-SET  = 
+UPDATE  target t
+SET t.column = s.column
 NVL((SELECT 
-FROM  s
-WHERE s. = t.),)
+FROM  source s
+WHERE s.join_column = t.join_column),)
 }}}
 
 This code wraps the subquery inside the NVL function so that any target records without matching source records will be updated to their current content. In other words, all matching records will be updated to the value from the source table, all other records will remain the same.
@@ -63,15 +63,15 @@ It's worth noting that in this example, every record in the target table still u
 It's possible to limit the target records to precisely those matched in the source table by using the WHERE EXISTS syntax:
 
 {{{
-UPDATE  t
-SET  = 
+UPDATE  target t
+SET t.column = s.column
 (SELECT 
-FROM  s
-WHERE s. = t.)
+FROM  source s
+WHERE s.join_column = t.join_column)
 WHERE EXISTS
 (SELECT *
 FROM  s
-WHERE s. = t.)
+WHERE s.join_column = t.join_column)
 }}}
 
 This is a more complex WHERE clause than the earlier simple example, but it's the same idea; we're using a WHERE clause to limit the set of target records to be affected by the UPDATE.
@@ -88,10 +88,10 @@ The idea here is that we update a view rather than a table. Any joins or limitat
 
 {{{
 UPDATE
-(SELECT t.,s.
-FROM  t,  s
-WHERE s. = t.)
-SET = 
+(SELECT t.column, s.column
+FROM  target t,  source s
+WHERE s.join_column = t.join_column)
+SET t.column = s.column
 }}}
 
 There are some restrictions on whether Oracle will allow tables to be updated via a view. Essentially, each row in the view must map to one and only one record in the underlying target table or, to put it in the more common jargon, the primary key of the target table must be preserved in the view.
