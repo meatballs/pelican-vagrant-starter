@@ -44,5 +44,3 @@ PLUGIN_PATHS = ('plugins',)
 PLUGINS = ['creole_reader', ]
 
 THEME = 'themes/voidy-bootstrap/'
-
-DISQUS_SITENAME = 'owencampbell'
