@@ -2,7 +2,7 @@
 title: PGP Signatures on Email
 slug: pgp
 tags: pgp, email
-date: 2014-09-26
+date: 2018-06-12
 <</header>>
 
 = Introduction
@@ -30,11 +30,11 @@ The attachment, or these two blocks, form a digital signature for the message wh
 * The message genuinely came from me.
 * The content of the message has not been altered
 
-This article explains why we've started using this technology and how the signature can be used.
+This article explains why I've started using this technology and how the signature can be used.
 
 = The Requirement
 
-If we were to send a hand written letter in the post, we would sign it so that the recipient could verify that it was genuine. We believe that our email should provide at least the same level of confidence.
+If I were to send a hand written letter in the post, I would sign it so that the recipient could verify that it was genuine. I believe that my email should provide at least the same level of confidence.
 
 This belief is strengthened by the prevalence of spam, phishing and other malicious attemps to use email fraudulently.
 
