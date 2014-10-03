@@ -89,3 +89,5 @@ This will take some time. It has to download the operating system and all the to
     Host 127.0.0.1
         ForwardAgent yes
 }}}
+
+* You can host your Pelican site with Github Pages. Instructions are in the [[http://docs.getpelican.com/en/3.4.0/tips.html|Pelican tips]] and the ghp-import tool is already installed on your vm.
