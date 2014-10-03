@@ -7,7 +7,7 @@ date: 2014-10-03
 
 = Introduction
 
-This article describes how to get a Pelican powered webiste up and running with minimal effort using a Vagrant virtual machine.
+This article describes how to get a Pelican powered website up and running with minimal effort using a Vagrant virtual machine.
 
 Pelican is a static html generator for creating blog style websites from simple text files in markdown, rst or creole syntax.
 
