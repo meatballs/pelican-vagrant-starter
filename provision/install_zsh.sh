@@ -6,3 +6,4 @@ su -c "chmod 774 ~/install.sh" vagrant
 su -c "~/install.sh" vagrant
 su -c "cp -f /vagrant/provision/zsh_settings.zsh ~/.local_settings.zsh" vagrant
 chsh -s /bin/zsh vagrant
+su -c "source ~/.zshrc" vagrant
