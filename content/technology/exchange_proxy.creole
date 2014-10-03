@@ -19,15 +19,15 @@ Instead, I'd like a dedicated machine to respond to connections from the web, fo
 
 There are several systems available to provide the proxy service. These are the ones I considered and the logic I used to decide between them:
 
-# Microsoft's ISA Server or Forefront Security for Exchange Server
+# **Microsoft's ISA Server or Forefront Security for Exchange Server**\\
 I'm sure either of these would have done the job admirably, but they involve spending money! If I'd been unable to get any other option working, this would have been my last resort.
 \\
-# The Apache Web Server (http://www.apache.org)
+# **The Apache Web Server** [[http://www.apache.org]]\\
 Apache can do reverse proxying and there are a few articles on the web describing how to use it for OWA and Outlook. However, these are mostly for Exchange Server 2003.
 \\
 The main problem is that Microsoft use some non-standard technology in Outlook and Apache doesn't support it. If I only wanted OWA, then Apache would do the job, but I want Outlook to work too.
 \\
-# Pound (http://www.apsis.ch/pound)
+# **Pound** [[http://www.apsis.ch/pound]]\\
 From the website,  Pound is "a reverse proxy, load balancer and HTTPS front-end for Web server(s)." It has support for Microsoft's non-standard URLs and would therefore seem an ideal candidate.
 \\
 However, there's a snag!!
@@ -36,7 +36,7 @@ Pound is designed to terminate an SSL connection and forward the decrypted reque
 \\
 If I just wanted OWA and Outlook, then Pound would be fine, but I want ActiveSync too.
 \\
-# Squid (http://www.squid-cache.org)
+# **Squid** [[http://www.squid-cache.org]]\\
 From the website, "Squid is a caching proxy for the Web supporting HTTP, HTTPS, FTP, and more." It supports Microsoft's non-standard URLs and it can use either http or https to talk to the Exchange Server.
 \\
 We're in business!!
