@@ -1,6 +1,7 @@
 <<header>>
 title: Pelican Powered Site on a Vagrant Virtual Machine
 tags: pelican, vagrant
+slug: pelican-starter
 date: 2014-10-03
 <</header>>
 
