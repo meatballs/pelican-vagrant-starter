@@ -4,3 +4,6 @@
 [submodule "voidy-bootstrap"]
     path = themes/voidy-bootstrap
     url = https://github.com/robulouski/voidy-bootstrap.git
+[submodule "provision"]
+	path = provision
+	url = https://github.com/meatballs/vagrant-provisioning.git
