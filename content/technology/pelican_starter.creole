@@ -36,7 +36,7 @@ There are four software tools which you will need on your machine for this proje
  git clone --recursive https://github.com/meatballs/pelican-vagrant-starter.git
 }}}
 
- * Start the virtual machine:
+ * Start the virtual machine for the first time:
 
 {{{
  cd <path to your repository>
@@ -44,6 +44,15 @@ There are four software tools which you will need on your machine for this proje
 }}}
 
 This will take some time. It has to download the operating system and all the tools to install on your new virtual machine.
+
+ * Connect to your vm, exit and reload it:
+
+{{{
+    vagrant ssh
+    <poke around to your heart's content>
+    exit
+    vagrant reload
+}}}
 
  * Check to see if it's working by pointing your web browser to [[http://localhost:8000]]
 
