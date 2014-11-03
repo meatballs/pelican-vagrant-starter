@@ -84,7 +84,7 @@ This will take some time. It has to download the operating system and all the to
 
 == Tips
 
- * You can issue a command directly to your vm with logging into a shell. e.g.
+ * You can issue a command directly to your vm without logging into a shell. e.g.
 
 {{{ 
     vagrant ssh -c "cd /vagrant; make rsync_upload"
